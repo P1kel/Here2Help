@@ -1,0 +1,443 @@
+/* PAGE */
+
+body {
+    margin: 0;
+
+    /* Light blue background */
+    background-color: #f2f7fb;
+
+    /* Main text color */
+    color: #16324f;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* NAVBAR */
+
+#nav-bar {
+
+    /* Dark blue navbar */
+    background-color: #073b66;
+
+    height: 75px;
+
+    /* Puts nav items in a row */
+    display: flex;
+
+    /* Centers the links */
+    justify-content: center;
+
+    /* Centers items vertically */
+    align-items: center;
+
+    gap: 50px;
+
+    /* Keeps navbar at the top while scrolling */
+    position: sticky;
+
+    top: 0;
+
+    /* Keeps navbar above other parts of the page */
+    z-index: 1000;
+}
+
+
+/* Navbar links */
+
+.nav {
+    color: white;
+
+    /* Removes underline */
+    text-decoration: none;
+
+    font-size: 17px;
+}
+
+
+/* Changes link color when mouse is over it */
+
+.nav:hover {
+    color: #70d6d3;
+}
+
+
+/* Small logo in navbar */
+
+#nav_logo {
+    width: 70px;
+
+    /* Lets us place the logo on the left */
+    position: absolute;
+
+    left: 25px;
+}
+
+
+/* HERO SECTION */
+
+#hero {
+
+    /* Puts the text and logo next to each other */
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 35px 70px;
+
+    background-color: #e8f3ff;
+}
+
+
+/* Main heading */
+
+h1 {
+    font-size: 46px;
+
+    margin: 0 0 10px;
+
+    color: #073b66;
+}
+
+
+/* Subtitle under the heading */
+
+#hero h3 {
+    margin: 0;
+
+    font-weight: normal;
+
+    color: #5d7185;
+}
+
+
+/* Large logo */
+
+#logo {
+    width: 180px;
+}
+
+
+/* TOP BUTTONS */
+
+#top-buttons {
+
+    margin-top: 25px;
+
+    /* Places buttons next to each other */
+    display: flex;
+
+    gap: 12px;
+}
+
+
+/* Styles every button */
+
+button {
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #1479b8;
+
+    color: white;
+
+    font-size: 15px;
+
+    /* Shows the hand cursor */
+    cursor: pointer;
+}
+
+
+/* Button changes color when hovered */
+
+button:hover {
+    background-color: #0d5f94;
+}
+
+
+/* Gives the location button a different color */
+
+#use-location {
+    background-color: #18a7a1;
+}
+
+
+/* MAIN SECTION */
+
+#main-content {
+
+    /* Puts map and resources next to each other */
+    display: flex;
+
+    gap: 40px;
+
+    margin: 35px 70px;
+}
+
+
+/* Left side with search and map */
+
+#left-section {
+    width: 750px;
+}
+
+
+/* SEARCH AREA */
+
+#bottom-buttons {
+
+    /* Keeps search items in one row */
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Input and dropdown */
+
+#location,
+#resources {
+    height: 45px;
+
+    padding: 0 12px;
+
+    border: 1px solid #c9d7e2;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    background-color: white;
+}
+
+
+/* Location input width */
+
+#location {
+    width: 230px;
+}
+
+
+/* Resource dropdown width */
+
+#resources {
+    width: 160px;
+}
+
+
+/* MAP */
+
+#map {
+    width: 100%;
+
+    height: 450px;
+
+    border-radius: 10px;
+
+    border: 1px solid #cbd9e4;
+}
+
+
+/* RESOURCE SECTION */
+
+#nearby-section {
+    width: 500px;
+}
+
+
+/* Holds all of the resource cards */
+
+#resource-list {
+
+    display: flex;
+
+    /* Stacks cards vertically */
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* Each resource card */
+
+.resource-card {
+
+    background-color: white;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    /* Colored line on left side */
+    border-left: 5px solid #18a7a1;
+
+    /* Small shadow */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Resource title */
+
+.resource-card h3 {
+    margin-top: 0;
+
+    color: #073b66;
+}
+
+
+/* Resource information */
+
+.resource-card p {
+    margin: 6px 0;
+
+    color: #5d7185;
+}
+
+
+/* ABOUT SECTION */
+
+#about {
+
+    margin: 50px 70px;
+
+    padding: 30px;
+
+    background-color: #e4f5f4;
+
+    border-radius: 10px;
+}
+
+
+#about h2 {
+    color: #073b66;
+}
+
+
+#about p {
+
+    max-width: 850px;
+
+    /* Adds more space between lines */
+    line-height: 1.6;
+}
+
+
+/* FOOTER */
+
+footer {
+
+    background-color: #073b66;
+
+    color: white;
+
+    padding: 30px 70px;
+}
+
+
+footer h3 {
+    margin-top: 0;
+}
+
+
+footer p {
+    color: #c9deec;
+}
+
+
+/* MOBILE DESIGN */
+
+/* These styles only happen when the screen is 700px wide or smaller */
+
+@media (max-width: 700px) {
+
+    /* Smaller navbar spacing */
+
+    #nav-bar {
+        gap: 15px;
+    }
+
+
+    /* Hides navbar logo on small screens */
+
+    #nav_logo {
+        display: none;
+    }
+
+
+    /* Smaller hero padding */
+
+    #hero {
+        padding: 30px 20px;
+    }
+
+
+    /* Hides large logo on phones */
+
+    #logo {
+        display: none;
+    }
+
+
+    h1 {
+        font-size: 34px;
+    }
+
+
+    /* Stacks top buttons */
+
+    #top-buttons {
+        flex-direction: column;
+    }
+
+
+    /* Stacks map and resource section */
+
+    #main-content {
+
+        flex-direction: column;
+
+        margin: 25px 20px;
+    }
+
+
+    /* Makes both sections full width */
+
+    #left-section,
+    #nearby-section {
+        width: 100%;
+    }
+
+
+    /* Stacks search controls */
+
+    #bottom-buttons {
+        flex-direction: column;
+    }
+
+
+    /* Makes controls fill the screen */
+
+    #location,
+    #resources,
+    #search-button {
+        width: 100%;
+    }
+
+
+    #about {
+        margin: 30px 20px;
+    }
+
+
+    footer {
+        padding: 30px 20px;
+    }
+
+}
