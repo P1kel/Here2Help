@@ -4,52 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Here2Help</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet CSS -->
     <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     >
 </head>
 
-
 <body>
 
     <!-- NAVIGATION BAR -->
     <nav id="nav-bar">
 
-        <!-- Logo in the top left -->
-        <img id="nav_logo" src="Images/logo_2.png" alt="Logo">
+        <a href="#hero">
+            <img id="nav_logo" src="Images/logo_2.png" alt="Here2Help Logo">
+        </a>
 
-        <!-- Navigation links -->
-        <a href="#hero" class="nav">Home</a>
-        <a href="#about" class="nav">About</a>
-        <a href="#main-content" class="nav">Resources</a>
+        <div id="nav-links">
+            <a href="#hero" class="nav">Home</a>
+            <a href="#about" class="nav">About</a>
+            <a href="#main-content" class="nav">Resources</a>
+        </div>
 
     </nav>
 
 
-    <!-- TOP / HERO SECTION -->
+    <!-- HERO SECTION -->
     <section id="hero">
 
-        <div>
+        <div id="hero-text">
 
-            <!-- Main title -->
             <h1>Find Help Near You</h1>
 
-            <!-- Short description -->
-            <h3>Find free food, shelters, and local resources.</h3>
+            <h3>
+                Find free food, shelters, and local resources
+                when you need them.
+            </h3>
 
-
-            <!-- Main buttons -->
             <div id="top-buttons">
 
-                <!-- Scrolls down to the resource section -->
                 <button id="find-nearby-resources">
                     Find Nearby Resources
                 </button>
 
-                <!-- Uses the user's current location -->
                 <button id="use-location">
                     Use My Location
                 </button>
@@ -58,9 +60,11 @@
 
         </div>
 
-
-        <!-- Large logo on the right side -->
-        <img id="logo" src="Images/logo.png" alt="Here2Help Logo">
+        <img
+            id="logo"
+            src="Images/logo.png"
+            alt="Here2Help Logo"
+        >
 
     </section>
 
@@ -70,63 +74,73 @@
 
 
         <!-- LEFT SIDE -->
-        <div id="left-section">
+        <section id="left-section">
+
+            <div id="section-heading">
+                <h2>Map of Nearby Resources</h2>
+
+                <p>
+                    Search for a location or use your current location.
+                </p>
+            </div>
 
 
-            <!-- Search and filter buttons -->
+            <!-- SEARCH CONTROLS -->
             <div id="bottom-buttons">
 
-                <!-- User can type a location -->
                 <input
                     id="location"
                     type="text"
-                    placeholder="Enter Location"
+                    placeholder="Enter city, address, or ZIP code"
+                    aria-label="Location"
                 >
 
-
-                <!-- Search button -->
                 <button id="search-button">
                     Search
                 </button>
 
-
-                <!-- Lets the user choose the type of resource -->
-                <select id="resources">
-
+                <select
+                    id="resources"
+                    aria-label="Resource type"
+                >
                     <option value="all">All Resources</option>
-
                     <option value="food">Free Food</option>
-
                     <option value="shelter">Shelters</option>
-
                 </select>
 
             </div>
 
 
-            <!-- Map title -->
-            <h2>Map of Nearby Resources</h2>
+            <!-- Messages such as errors or location results -->
+            <p id="search-status"></p>
 
 
-            <!-- Leaflet puts the map inside this div -->
+            <!-- LEAFLET MAP -->
             <div id="map"></div>
 
-        </div>
+        </section>
 
 
 
         <!-- RIGHT SIDE -->
-        <div id="nearby-section">
+        <section id="nearby-section">
 
-            <!-- Title above the resource cards -->
-            <h2>Nearby Resources</h2>
+            <div id="resource-heading">
+
+                <div>
+                    <h2>Nearby Resources</h2>
+                    <p>Organizations that may be able to help.</p>
+                </div>
+
+                <span id="resource-count"></span>
+
+            </div>
 
 
-            <!-- JavaScript adds the resource cards here -->
+            <!-- JavaScript adds resource cards here -->
             <div id="resource-list"></div>
 
-        </div>
-
+        </section>
 
     </main>
 
@@ -139,8 +153,9 @@
         <p>
             Here2Help was created by Michael Shvetsov,
             Ethan Resto, and Dhiyan Dhushyandhan.
-            Our goal is to help people find food, shelters,
-            and other useful resources near them.
+            Our goal is to make it easier for people to find
+            free food, shelters, and other useful resources
+            in their area.
         </p>
 
     </section>
@@ -158,11 +173,10 @@
     </footer>
 
 
-    <!-- Loads the Leaflet JavaScript library -->
+    <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-
-    <!-- Connects our own JavaScript file -->
+    <!-- Our JavaScript -->
     <script src="script.js"></script>
 
 </body>

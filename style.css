@@ -1,206 +1,234 @@
 /* PAGE */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-
-    /* Light blue background */
     background-color: #f2f7fb;
-
-    /* Main text color */
     color: #16324f;
-
     font-family: Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 
 /* NAVBAR */
 
 #nav-bar {
-
-    /* Dark blue navbar */
     background-color: #073b66;
-
     height: 75px;
 
-    /* Puts nav items in a row */
     display: flex;
-
-    /* Centers the links */
     justify-content: center;
-
-    /* Centers items vertically */
     align-items: center;
 
-    gap: 50px;
-
-    /* Keeps navbar at the top while scrolling */
     position: sticky;
-
     top: 0;
-
-    /* Keeps navbar above other parts of the page */
     z-index: 1000;
+
+    padding: 0 25px;
 }
 
 
-/* Navbar links */
+/* NAVIGATION LINKS */
+
+#nav-links {
+    display: flex;
+    gap: 50px;
+}
 
 .nav {
     color: white;
-
-    /* Removes underline */
     text-decoration: none;
 
     font-size: 17px;
+    font-weight: bold;
+
+    transition: color 0.2s;
 }
-
-
-/* Changes link color when mouse is over it */
 
 .nav:hover {
     color: #70d6d3;
 }
 
 
-/* Small logo in navbar */
+/* NAVBAR LOGO */
 
 #nav_logo {
     width: 70px;
 
-    /* Lets us place the logo on the left */
     position: absolute;
-
     left: 25px;
+    top: 50%;
+
+    transform: translateY(-50%);
 }
 
 
 /* HERO SECTION */
 
 #hero {
+    min-height: 330px;
 
-    /* Puts the text and logo next to each other */
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 
-    padding: 35px 70px;
+    padding: 50px max(70px, calc((100% - 1350px) / 2));
 
     background-color: #e8f3ff;
 }
 
+#hero-text {
+    max-width: 650px;
+}
 
-/* Main heading */
+
+/* MAIN HEADING */
 
 h1 {
-    font-size: 46px;
+    font-size: 48px;
 
-    margin: 0 0 10px;
+    margin: 0 0 12px;
 
     color: #073b66;
 }
 
 
-/* Subtitle under the heading */
+/* HERO DESCRIPTION */
 
 #hero h3 {
     margin: 0;
 
+    max-width: 550px;
+
+    font-size: 20px;
     font-weight: normal;
+    line-height: 1.5;
 
     color: #5d7185;
 }
 
 
-/* Large logo */
+/* LARGE LOGO */
 
 #logo {
-    width: 180px;
+    width: 190px;
 }
 
 
 /* TOP BUTTONS */
 
 #top-buttons {
+    margin-top: 28px;
 
-    margin-top: 25px;
-
-    /* Places buttons next to each other */
     display: flex;
-
     gap: 12px;
 }
 
 
-/* Styles every button */
+/* BUTTONS */
 
 button {
     padding: 12px 18px;
 
     border: none;
-
     border-radius: 7px;
 
     background-color: #1479b8;
-
     color: white;
 
     font-size: 15px;
+    font-weight: bold;
 
-    /* Shows the hand cursor */
     cursor: pointer;
+
+    transition:
+        background-color 0.2s,
+        transform 0.15s;
 }
-
-
-/* Button changes color when hovered */
 
 button:hover {
     background-color: #0d5f94;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 
-/* Gives the location button a different color */
+/* LOCATION BUTTON */
 
 #use-location {
     background-color: #18a7a1;
+}
+
+#use-location:hover {
+    background-color: #128882;
 }
 
 
 /* MAIN SECTION */
 
 #main-content {
+    max-width: 1400px;
 
-    /* Puts map and resources next to each other */
     display: flex;
 
     gap: 40px;
 
-    margin: 35px 70px;
+    margin: 45px auto;
+    padding: 0 40px;
 }
 
 
-/* Left side with search and map */
+/* LEFT SIDE */
 
 #left-section {
-    width: 750px;
+    flex: 3;
+    min-width: 0;
+}
+
+
+/* RIGHT SIDE */
+
+#nearby-section {
+    flex: 2;
+    min-width: 320px;
+}
+
+
+/* SECTION HEADINGS */
+
+#section-heading h2,
+#resource-heading h2 {
+    margin: 0 0 5px;
+    color: #073b66;
+}
+
+#section-heading p,
+#resource-heading p {
+    margin: 0 0 20px;
+    color: #6b7f91;
 }
 
 
 /* SEARCH AREA */
 
 #bottom-buttons {
-
-    /* Keeps search items in one row */
     display: flex;
+    gap: 10px;
 
-    gap: 12px;
-
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 
-/* Input and dropdown */
+/* INPUT AND DROPDOWN */
 
 #location,
 #resources {
@@ -209,26 +237,52 @@ button:hover {
     padding: 0 12px;
 
     border: 1px solid #c9d7e2;
-
     border-radius: 7px;
 
     font-size: 15px;
 
     background-color: white;
+    color: #16324f;
+
+    outline: none;
 }
 
 
-/* Location input width */
+/* INPUT */
 
 #location {
-    width: 230px;
+    flex: 1;
+    min-width: 180px;
 }
 
 
-/* Resource dropdown width */
+/* DROPDOWN */
 
 #resources {
     width: 160px;
+}
+
+
+/* INPUT FOCUS */
+
+#location:focus,
+#resources:focus {
+    border-color: #1479b8;
+
+    box-shadow: 0 0 0 2px rgba(20, 121, 184, 0.12);
+}
+
+
+/* SEARCH STATUS */
+
+#search-status {
+    min-height: 22px;
+
+    margin: 8px 0;
+
+    font-size: 14px;
+
+    color: #5d7185;
 }
 
 
@@ -236,193 +290,318 @@ button:hover {
 
 #map {
     width: 100%;
+    height: 475px;
 
-    height: 450px;
-
-    border-radius: 10px;
+    border-radius: 12px;
 
     border: 1px solid #cbd9e4;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
 }
 
 
-/* RESOURCE SECTION */
+/* RESOURCE HEADING */
 
-#nearby-section {
-    width: 500px;
+#resource-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 15px;
 }
 
 
-/* Holds all of the resource cards */
+/* RESOURCE COUNT */
+
+#resource-count {
+    background-color: #d8f1ef;
+    color: #147c77;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+/* RESOURCE LIST */
 
 #resource-list {
-
     display: flex;
-
-    /* Stacks cards vertically */
     flex-direction: column;
 
-    gap: 12px;
+    gap: 13px;
+
+    max-height: 510px;
+
+    overflow-y: auto;
+
+    padding-right: 5px;
 }
 
 
-/* Each resource card */
+/* RESOURCE CARD */
 
 .resource-card {
-
     background-color: white;
 
     padding: 18px;
 
     border-radius: 10px;
 
-    /* Colored line on left side */
     border-left: 5px solid #18a7a1;
 
-    /* Small shadow */
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s;
+}
+
+.resource-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.09);
 }
 
 
-/* Resource title */
+/* RESOURCE TYPE */
+
+.resource-type {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    padding: 4px 8px;
+
+    border-radius: 5px;
+
+    background-color: #e7f3fa;
+    color: #1479b8;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+
+/* RESOURCE TITLE */
 
 .resource-card h3 {
-    margin-top: 0;
+    margin: 0 0 10px;
 
     color: #073b66;
 }
 
 
-/* Resource information */
+/* RESOURCE INFORMATION */
 
 .resource-card p {
-    margin: 6px 0;
+    margin: 7px 0;
 
     color: #5d7185;
+
+    line-height: 1.4;
+}
+
+
+/* DISTANCE */
+
+.distance {
+    font-weight: bold;
+
+    color: #1479b8 !important;
+}
+
+
+/* DIRECTIONS LINK */
+
+.directions {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    color: #1479b8;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.directions:hover {
+    text-decoration: underline;
+}
+
+
+/* EMPTY RESULTS */
+
+.no-results {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    color: #6b7f91;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 
 /* ABOUT SECTION */
 
 #about {
+    max-width: 1260px;
 
-    margin: 50px 70px;
+    margin: 60px auto;
 
-    padding: 30px;
+    padding: 35px;
 
     background-color: #e4f5f4;
 
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-
 #about h2 {
+    margin-top: 0;
+
     color: #073b66;
 }
 
-
 #about p {
-
     max-width: 850px;
 
-    /* Adds more space between lines */
-    line-height: 1.6;
+    margin-bottom: 0;
+
+    line-height: 1.7;
+
+    color: #4f687c;
 }
 
 
 /* FOOTER */
 
 footer {
-
     background-color: #073b66;
-
     color: white;
 
-    padding: 30px 70px;
+    padding: 35px max(40px, calc((100% - 1260px) / 2));
 }
-
 
 footer h3 {
     margin-top: 0;
+    margin-bottom: 8px;
+}
+
+footer p {
+    margin: 6px 0;
+
+    color: #c9deec;
 }
 
 
-footer p {
-    color: #c9deec;
+/* TABLET DESIGN */
+
+@media (max-width: 950px) {
+
+    #hero {
+        padding: 45px 40px;
+    }
+
+    #main-content {
+        flex-direction: column;
+
+        padding: 0 40px;
+    }
+
+    #nearby-section {
+        min-width: 0;
+    }
+
+    #resource-list {
+        max-height: none;
+    }
+
+    #about {
+        margin: 50px 40px;
+    }
 }
 
 
 /* MOBILE DESIGN */
 
-/* These styles only happen when the screen is 700px wide or smaller */
-
 @media (max-width: 700px) {
 
-    /* Smaller navbar spacing */
-
     #nav-bar {
-        gap: 15px;
+        height: 65px;
     }
 
-
-    /* Hides navbar logo on small screens */
+    #nav-links {
+        gap: 20px;
+    }
 
     #nav_logo {
         display: none;
     }
 
-
-    /* Smaller hero padding */
-
-    #hero {
-        padding: 30px 20px;
+    .nav {
+        font-size: 15px;
     }
 
 
-    /* Hides large logo on phones */
+    /* HERO */
+
+    #hero {
+        min-height: auto;
+
+        padding: 40px 20px;
+    }
 
     #logo {
         display: none;
     }
 
-
     h1 {
-        font-size: 34px;
+        font-size: 36px;
+    }
+
+    #hero h3 {
+        font-size: 17px;
     }
 
 
-    /* Stacks top buttons */
+    /* TOP BUTTONS */
 
     #top-buttons {
         flex-direction: column;
+
+        max-width: 280px;
     }
 
 
-    /* Stacks map and resource section */
+    /* MAIN */
 
     #main-content {
+        margin: 30px auto;
 
-        flex-direction: column;
-
-        margin: 25px 20px;
+        padding: 0 20px;
     }
 
 
-    /* Makes both sections full width */
-
-    #left-section,
-    #nearby-section {
-        width: 100%;
-    }
-
-
-    /* Stacks search controls */
+    /* SEARCH */
 
     #bottom-buttons {
         flex-direction: column;
     }
-
-
-    /* Makes controls fill the screen */
 
     #location,
     #resources,
@@ -431,13 +610,32 @@ footer p {
     }
 
 
-    #about {
-        margin: 30px 20px;
+    /* MAP */
+
+    #map {
+        height: 400px;
     }
 
+
+    /* RESOURCE HEADING */
+
+    #resource-heading {
+        flex-direction: column;
+    }
+
+
+    /* ABOUT */
+
+    #about {
+        margin: 40px 20px;
+
+        padding: 25px;
+    }
+
+
+    /* FOOTER */
 
     footer {
         padding: 30px 20px;
     }
-
 }
