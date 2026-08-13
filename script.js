@@ -165,6 +165,55 @@ document
 
     });
 
+    // SEARCH FOR A LOCATION
+
+document
+    .getElementById("search-button")
+    .addEventListener("click", function () {
+
+        let location = document
+            .getElementById("location")
+            .value;
+
+
+        // Makes sure the user typed something
+        if (location == "") {
+            alert("Please enter a location.");
+            return;
+        }
+
+
+        // Searches for the location
+        fetch(
+            "https://nominatim.openstreetmap.org/search?format=json&q=" +
+            encodeURIComponent(location)
+        )
+
+        .then(function (response) {
+            return response.json();
+        })
+
+        .then(function (data) {
+
+            // Checks if the location was found
+            if (data.length > 0) {
+
+                let lat = data[0].lat;
+                let lng = data[0].lon;
+
+                // Moves the map to the searched location
+                map.setView([lat, lng], 14);
+
+            }
+
+            else {
+                alert("Location not found.");
+            }
+
+        });
+
+    });
+
 
 // SHOWS EVERYTHING WHEN PAGE LOADS
 
